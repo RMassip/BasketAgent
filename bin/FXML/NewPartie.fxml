@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewPartieController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="750.0" layoutX="-34.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Ressource/Image/terrain-basket-vide-plancher-bois-eclairage-ai-generatif_885800-1522.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="PersoName" layoutX="109.0" layoutY="56.0" text="Votre Nom :">
+         <font>
+            <Font name="Book Antiqua Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="PersoFirstName" layoutX="351.0" layoutY="57.0" text="Votre Prénom :">
+         <font>
+            <Font name="Bodoni MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TextePersoName" layoutX="109.0" layoutY="83.0" />
+      <TextField fx:id="TextPersoFirstName" layoutX="351.0" layoutY="83.0" />
+      <Label fx:id="AgencieName" layoutX="109.0" layoutY="131.0" text="Votre Agence :">
+         <font>
+            <Font name="Book Antiqua Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TextAgencieName" layoutX="109.0" layoutY="164.0" prefHeight="26.0" prefWidth="393.0" />
+      <Button fx:id="btnContinue" layoutX="259.0" layoutY="282.0" mnemonicParsing="false" onAction="#btnContinueOnClick" text="Continué">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnBack" layoutX="259.0" layoutY="322.0" mnemonicParsing="false" onAction="#btnBackOnClick" prefHeight="31.0" prefWidth="82.0" text="Retour">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

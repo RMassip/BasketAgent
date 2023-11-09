@@ -16,7 +16,7 @@ public class App extends Application {
                 Scene scene = new Scene(root);
 
     
-            primaryStage.setTitle("Hello World!");
+            primaryStage.setTitle("Basket Agent");
                 primaryStage.setScene(scene);
                 primaryStage.show();
 

@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AccueilController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AccueilController">
    <children>
-      <ImageView fitHeight="419.0" fitWidth="716.0" layoutX="-31.0" layoutY="-1.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="426.0" fitWidth="750.0" layoutX="-59.0" layoutY="-10.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Ressource/Image/terrain-basket-vide-plancher-bois-eclairage-ai-generatif_885800-1522.jpg" />
          </image>
@@ -25,6 +25,11 @@
          </font>
       </Button>
       <Button fx:id="btnContinue" layoutX="238.0" layoutY="168.0" mnemonicParsing="false" onAction="#btnContinueOnClick" prefHeight="31.0" prefWidth="122.0" text="Continuer">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnExit" layoutX="239.0" layoutY="307.0" mnemonicParsing="false" onAction="#btnExitOnClick" prefHeight="31.0" prefWidth="122.0" text="Quitter">
          <font>
             <Font size="15.0" />
          </font>
