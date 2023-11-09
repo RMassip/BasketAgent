@@ -1,3 +1,0 @@
-opacité des images a 0.75.
-
-couleur bouton et texte (orange ?)

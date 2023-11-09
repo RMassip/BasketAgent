@@ -1,5 +1,8 @@
 package Controller;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -58,7 +61,12 @@ public class NewPartieController {
 
     @FXML
     void btnContinueOnClick(ActionEvent event) {
+        // Récupérer la valeur du champ
+        String valeurAgence = TextAgencieName.getText();
+        String name = TextePersoName.getText();
+        String firstname = TextPersoFirstName.getText();
 
+        //insertion base de données
     }
 
 }
