@@ -3,13 +3,14 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\romai\\Downloads\\openjfx-17.0.9_windows-x64_bin-sdk\\javafx-sdk-17.0.9\\lib\\javafx.fxml.jar",
-        "c:\\Users\\romai\\Downloads\\openjfx-17.0.9_windows-x64_bin-sdk\\javafx-sdk-17.0.9\\lib\\javafx.graphics.jar",
-        "c:\\Users\\romai\\Downloads\\openjfx-17.0.9_windows-x64_bin-sdk\\javafx-sdk-17.0.9\\lib\\javafx.media.jar",
-        "c:\\Users\\romai\\Downloads\\openjfx-17.0.9_windows-x64_bin-sdk\\javafx-sdk-17.0.9\\lib\\javafx.swing.jar",
-        "c:\\Users\\romai\\Downloads\\openjfx-17.0.9_windows-x64_bin-sdk\\javafx-sdk-17.0.9\\lib\\javafx.web.jar",
-        "c:\\Users\\romai\\Downloads\\openjfx-17.0.9_windows-x64_bin-sdk\\javafx-sdk-17.0.9\\lib\\javafx.base.jar",
-        "c:\\Users\\romai\\Downloads\\openjfx-17.0.9_windows-x64_bin-sdk\\javafx-sdk-17.0.9\\lib\\javafx.controls.jar",
-        "c:\\Users\\romai\\Downloads\\openjfx-17.0.9_windows-x64_bin-sdk\\javafx-sdk-17.0.9\\lib\\javafx-swt.jar"
+        "src\\Ressource\\libraries\\javafx.base.jar",
+        "src\\Ressource\\libraries\\javafx.controls.jar",
+        "src\\Ressource\\libraries\\javafx.fxml.jar",
+        "src\\Ressource\\libraries\\javafx.graphics.jar",
+        "src\\Ressource\\libraries\\javafx.media.jar",
+        "src\\Ressource\\libraries\\javafx.swing.jar",
+        "src\\Ressource\\libraries\\javafx.web.jar",
+        "src\\Ressource\\libraries\\javafx-swt.jar",
+        "src\\Ressource\\libraries\\sqlite-jdbc-3.7.2.jar"
     ]
 }
