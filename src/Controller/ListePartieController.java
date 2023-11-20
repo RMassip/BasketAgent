@@ -9,13 +9,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -39,7 +42,18 @@ public class ListePartieController {
     private TableColumn<Partie, String> colNameAgence;
 
     private ObservableList<Partie> partiesList = FXCollections.observableArrayList();
+    /* 
+    Pas bons
+    */
+    @FXML
+    private MenuItem idFacile;
 
+    @FXML
+    private MenuItem idHard;
+
+    @FXML
+    private MenuItem idMoyen;
+    
     @FXML
     void btnBackOnClicks(ActionEvent event) {
         try {
@@ -59,6 +73,7 @@ public class ListePartieController {
 
     @FXML
     public void initialize() {
+
         // Initialiser les colonnes
         colNameAgence.setCellValueFactory(cellData -> cellData.getValue().nameAgenceProperty());
     
@@ -151,9 +166,73 @@ public class ListePartieController {
         }
     }
 
-    
     @FXML
     private void Dolancement(MouseEvent event) {
-        
+        if (event.getClickCount() == 2) { // Double-clic
+            TablePosition<Partie, String> pos = TabSav.getSelectionModel().getSelectedCells().get(0);
+            int row = pos.getRow();
+            TableColumn<Partie, String> col = pos.getTableColumn();
+
+            // Obtenez la valeur de la cellule sélectionnée
+            String selectedValue = (String) col.getCellObservableValue(TabSav.getItems().get(row)).getValue();
+            
+            // Maintenant, vous avez la valeur de la cellule sélectionnée (selectedValue)
+            System.out.println("Valeur sélectionnée : " + selectedValue);
+            
+             // Connexion à la base de données
+            try (Connection connection = SQLiteDatabaseManager.connect()) {
+                // Exécuter la requête pour récupérer l'ID
+                String selectQuery = "SELECT id_Partie FROM Partie WHERE nameAgence_Partie = ?";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
+                    preparedStatement.setString(1, selectedValue);
+                    try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                        if (resultSet.next()) {
+                            int id = resultSet.getInt("id_Partie");
+
+                            String cheminDuFichier = "src/Save/save.json";
+            
+                            String jsonContent = "{ \n \"partie\": "+id+" \n}";
+                            File file = new File(cheminDuFichier);
+
+                            try {
+                                if (!file.exists())
+                                    file.createNewFile();
+                                FileWriter writer = new FileWriter(file);
+                                writer.write(jsonContent);
+                                writer.flush();
+                                writer.close();
+                                
+                            } catch (IOException e) {
+                                System.out.println("Erreur: impossible de créer le fichier '"
+                                        + cheminDuFichier + "'");
+                            }
+                        } else {
+                            System.out.println("Aucun résultat trouvé pour le nom d'agence : " + selectedValue);
+                        }
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    // Gérer l'erreur d'exécution de la requête
+                }
+            } catch (SQLException | IOException e) {
+                e.printStackTrace();
+                // Gérer l'erreur de connexion
+            }
+
+            try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXML/Principale.fxml"));
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+
+            Stage stage = (Stage) btnBack.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
+
 }

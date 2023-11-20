@@ -80,6 +80,8 @@ public class NewPartieController {
 
                 // Exécuter la requête d'insertion
                 preparedStatement.executeUpdate();
+
+                btnBack();
             } catch (SQLException e) {
                 e.printStackTrace();
                 // Gérer l'erreur d'insertion
@@ -98,6 +100,23 @@ public class NewPartieController {
                 e.printStackTrace();
                 // Gérer l'erreur de fermeture de la connexion
             }
+        }
+    }
+
+    @FXML
+    void btnBack() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXML/Accueil.fxml"));
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+
+            Stage stage = (Stage) btnContinue.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -17,13 +17,14 @@ public class SQLiteDatabaseManager {
         File dbFile = new File(System.getProperty("java.io.tmpdir"), "BasketAgentBD.db");
     
         try {
-            if (!dbFile.exists()) {
-                InputStream in = SQLiteDatabaseManager.class.getResourceAsStream("/Ressource/BD/BasketAgentBD.db");
-                if (in != null) {
-                    Files.copy(in, dbFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                    System.out.println("Database copied to: " + dbFile.getAbsolutePath());
-                }
+            
+            dbFile.delete();
+            InputStream in = SQLiteDatabaseManager.class.getResourceAsStream("/Ressource/BD/BasketAgentBD.db");
+            if (in != null) {
+                Files.copy(in, dbFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                System.out.println("Database copied to: " + dbFile.getAbsolutePath());
             }
+            
     
             Class.forName("org.sqlite.JDBC");
     

@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,24 +17,24 @@
             <Image url="@../Ressource/Image/terrain-basket-vide-plancher-bois-eclairage-ai-generatif_885800-1522.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="PersoName" layoutX="109.0" layoutY="56.0" text="Votre Nom :">
+      <Label fx:id="PersoName" layoutX="108.0" layoutY="115.0" text="Votre Nom :">
          <font>
             <Font name="Book Antiqua Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="PersoFirstName" layoutX="351.0" layoutY="57.0" text="Votre Prénom :">
+      <Label fx:id="PersoFirstName" layoutX="348.0" layoutY="116.0" text="Votre Prénom :">
          <font>
             <Font name="Bodoni MT Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="TextePersoName" layoutX="109.0" layoutY="83.0" style="-fx-background-color: #f2e605;" />
-      <TextField fx:id="TextPersoFirstName" layoutX="351.0" layoutY="83.0" style="-fx-background-color: #f2e605;" />
-      <Label fx:id="AgencieName" layoutX="109.0" layoutY="131.0" text="Votre Agence :">
+      <TextField fx:id="TextePersoName" layoutX="108.0" layoutY="142.0" style="-fx-background-color: #f2e605;" />
+      <TextField fx:id="TextPersoFirstName" layoutX="348.0" layoutY="142.0" style="-fx-background-color: #f2e605;" />
+      <Label fx:id="AgencieName" layoutX="108.0" layoutY="37.0" text="Votre Agence :">
          <font>
             <Font name="Book Antiqua Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="TextAgencieName" layoutX="109.0" layoutY="164.0" prefHeight="26.0" prefWidth="393.0" style="-fx-background-color: #f2e605;" />
+      <TextField fx:id="TextAgencieName" layoutX="108.0" layoutY="70.0" prefHeight="26.0" prefWidth="393.0" style="-fx-background-color: #f2e605;" />
       <Button fx:id="btnContinue" layoutX="262.0" layoutY="282.0" mnemonicParsing="false" onAction="#btnContinueOnClick" style="-fx-background-color: #f2e605;" text="Continuer">
          <font>
             <Font size="15.0" />
@@ -43,5 +45,17 @@
             <Font size="15.0" />
          </font>
       </Button>
+      <MenuButton layoutX="108.0" layoutY="220.0" mnemonicParsing="false" style="-fx-background-color: #f2e605;" text="MenuButton">
+        <items>
+          <MenuItem fx:id="idFacile" mnemonicParsing="false" text="Facile" />
+          <MenuItem fx:id="idMoyen" mnemonicParsing="false" text="Moyen" />
+            <MenuItem fx:id="idHard" mnemonicParsing="false" text="Difficile" />
+        </items>
+      </MenuButton>
+      <Label fx:id="PersoName1" layoutX="108.0" layoutY="187.0" text="Difficulté :">
+         <font>
+            <Font name="Book Antiqua Bold" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
