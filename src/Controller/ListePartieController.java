@@ -107,7 +107,7 @@ public class ListePartieController {
 
     private void loadPartiesData() {
         // Connexion à la base de données
-        try (Connection connection = SQLiteDatabaseManager.connect()) {
+        try (Connection connection = SQLiteDatabaseManager.connect(false)) {
             // Exécuter la requête pour récupérer les parties
             String selectQuery = "SELECT nameAgence_Partie FROM Partie";
             try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery);
@@ -137,7 +137,7 @@ public class ListePartieController {
 
     private void deletePartie(Partie partie) {
         // Connexion à la base de données
-        try (Connection connection = SQLiteDatabaseManager.connect()) {
+        try (Connection connection = SQLiteDatabaseManager.connect(false)) {
             // Exécuter la requête DELETE
             String deleteQuery = "DELETE FROM Partie WHERE nameAgence_Partie = ?";
             try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
@@ -180,7 +180,7 @@ public class ListePartieController {
             System.out.println("Valeur sélectionnée : " + selectedValue);
             
              // Connexion à la base de données
-            try (Connection connection = SQLiteDatabaseManager.connect()) {
+            try (Connection connection = SQLiteDatabaseManager.connect(false)) {
                 // Exécuter la requête pour récupérer l'ID
                 String selectQuery = "SELECT id_Partie FROM Partie WHERE nameAgence_Partie = ?";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
@@ -191,7 +191,7 @@ public class ListePartieController {
 
                             String cheminDuFichier = "src/Save/save.json";
             
-                            String jsonContent = "{ \n \"partie\": "+id+" \n}";
+                            String jsonContent = "{ \n \"partie\": "+id+", \n \"argent\": "+0+", \n \"reputation\": "+0+", \n \"week\": "+1+", \n \"year\": "+2023+" \n }";
                             File file = new File(cheminDuFichier);
 
                             try {

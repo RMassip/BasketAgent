@@ -69,7 +69,7 @@ public class NewPartieController {
         // Insertion dans la base de données
         Connection connection = null;
         try {
-            connection = SQLiteDatabaseManager.connect();
+            connection = SQLiteDatabaseManager.connect(true);
 
             // Préparer la requête d'insertion
             String insertQuery = "INSERT INTO Partie (nameAgence_Partie,firstname_Partie,name_Partie) VALUES (?, ?, ?)";

@@ -1,3 +1,7 @@
 { 
- "partie": 3 
-}
+ "partie": 3, 
+ "argent": 0, 
+ "reputation": 0, 
+ "week": 1, 
+ "year": 2023 
+ }

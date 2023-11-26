@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PrincipaleController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PrincipaleController">
    <children>
       <ImageView fitHeight="408.0" fitWidth="750.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -54,6 +54,11 @@
       <Button fx:id="btnBack" layoutX="510.0" layoutY="-1.0" mnemonicParsing="false" onAction="#btnBackOnClicks" prefHeight="26.0" prefWidth="75.0" text="Quitter">
          <font>
             <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnNext" layoutX="202.0" layoutY="355.0" mnemonicParsing="false" onAction="#OnClickbtnNext" prefHeight="30.0" prefWidth="195.0" text="Semaine Suivante">
+         <font>
+            <Font name="System Bold" size="15.0" />
          </font>
       </Button>
    </children>

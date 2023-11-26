@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EvenementController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="750.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Ressource/Image/terrain-basket-vide-plancher-bois-eclairage-ai-generatif_885800-1522.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnN1" layoutX="58.0" layoutY="235.0" mnemonicParsing="false" onAction="#OnClickbtnN1" prefHeight="78.0" prefWidth="175.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnN2" layoutX="369.0" layoutY="235.0" mnemonicParsing="false" onAction="#OnClickbtnN2" prefHeight="78.0" prefWidth="175.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="texEvent" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="199.0" layoutY="43.0" prefHeight="52.0" prefWidth="202.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

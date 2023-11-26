@@ -13,16 +13,18 @@ public class SQLiteDatabaseManager {
 
     private static Connection connection;
 
-    public static Connection connect() throws SQLException, IOException {
+    public static Connection connect(boolean status) throws SQLException, IOException {
         File dbFile = new File(System.getProperty("java.io.tmpdir"), "BasketAgentBD.db");
     
         try {
+            if(status == true){
+                dbFile.delete();
             
-            dbFile.delete();
-            InputStream in = SQLiteDatabaseManager.class.getResourceAsStream("/Ressource/BD/BasketAgentBD.db");
-            if (in != null) {
-                Files.copy(in, dbFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                System.out.println("Database copied to: " + dbFile.getAbsolutePath());
+                InputStream in = SQLiteDatabaseManager.class.getResourceAsStream("/Ressource/BD/BasketAgentBD.db");
+                if (in != null) {
+                    Files.copy(in, dbFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                    System.out.println("Database copied to: " + dbFile.getAbsolutePath());
+                }
             }
             
     
