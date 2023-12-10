@@ -180,7 +180,8 @@ public class ListePartieController {
             System.out.println("Valeur sélectionnée : " + selectedValue);
             
              // Connexion à la base de données
-            try (Connection connection = SQLiteDatabaseManager.connect(false)) {
+             // mettre en false pour le bon fonctionnement
+            try (Connection connection = SQLiteDatabaseManager.connect(true)) {
                 // Exécuter la requête pour récupérer l'ID
                 String selectQuery = "SELECT id_Partie FROM Partie WHERE nameAgence_Partie = ?";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {

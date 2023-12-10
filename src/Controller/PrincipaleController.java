@@ -22,6 +22,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class PrincipaleController {
@@ -46,6 +48,12 @@ public class PrincipaleController {
 
     @FXML
     private Button btnNext;
+
+    @FXML
+    private TableColumn<?, ?> tabJoueur;
+
+    @FXML
+    private Button btnFindJoueur;
 
     @FXML
     public void initialize() {
@@ -113,7 +121,7 @@ public class PrincipaleController {
     void btnBackOnClicks(ActionEvent event) {
         try {
             
-            //sauvegarde des données dans la bd.
+            //sauvegarde des données dans la bd.(pas sur de l'uttilisé pour l'instant)
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXML/Accueil.fxml"));
             Parent root = loader.load();
@@ -260,7 +268,33 @@ public class PrincipaleController {
         if( isevent == 1){
             return true;
         }else{
-            return false;
+            return false;   
         }
+    }
+
+    //ouverture de la page d'affichage des joueurs trouvés
+    @FXML
+    void OnClickbtnFindJoueur(ActionEvent event) {
+        try {
+            
+            //sauvegarde des données dans la bd.
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXML/FindJoueur.fxml"));
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+
+            Stage stage = (Stage) btnBack.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void OnMouseClickTabJoueur(MouseEvent event) {
+        System.out.println("Test");
     }
 }

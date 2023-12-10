@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FindJoueurControlleur">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="750.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Ressource/Image/terrain-basket-vide-plancher-bois-eclairage-ai-generatif_885800-1522.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tabfindjoueur" layoutX="35.0" layoutY="23.0" prefHeight="354.0" prefWidth="414.0">
+        <columns>
+          <TableColumn prefWidth="60.00006103515625" text="Nom" />
+            <TableColumn prefWidth="52.79999542236328" text="Générale" />
+            <TableColumn prefWidth="61.60003662109375" text="Physique" />
+            <TableColumn prefWidth="69.60003662109375" text="Athlétisme" />
+            <TableColumn prefWidth="63.20001220703125" text="Technique" />
+            <TableColumn prefWidth="60.0" text="Relation" />
+            <TableColumn prefWidth="43.20001831054685" text="Opinion" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnfind" layoutX="461.0" layoutY="40.0" mnemonicParsing="false" onAction="#OnClickbtnfind" prefHeight="46.0" prefWidth="130.0" text="Recherche" />
+      <Button fx:id="BtnScout" layoutX="461.0" layoutY="120.0" mnemonicParsing="false" onAction="#OnClickBtnScout" prefHeight="46.0" prefWidth="130.0" text="Recruteur" />
+      <Button fx:id="btnBack" layoutX="461.0" layoutY="330.0" mnemonicParsing="false" onAction="#OnclickbtnBack" prefHeight="46.0" prefWidth="130.0" text="Retour" />
+   </children>
+</AnchorPane>
