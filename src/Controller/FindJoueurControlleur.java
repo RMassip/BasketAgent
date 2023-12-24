@@ -27,7 +27,7 @@ public class FindJoueurControlleur {
 
     @FXML
     public void initialize(){
-
+        
     }
 
     @FXML
